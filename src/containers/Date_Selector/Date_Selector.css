@@ -1,0 +1,25 @@
+#data_selector
+{
+  width:180px;
+  margin-top: 4px;
+}
+.monthAndYear{
+  font-size: 20px;
+  font-weight: 400;
+  opacity: .54;
+  white-space: nowrap;
+  line-height: 23px;
+}
+.Qclass{
+  color: red;
+  font-size: 30px;
+  margin-left: 5px;
+}
+.calender_text{
+  font-size: 20px;
+  opacity: .70;
+}
+.changeMonth_bttn{
+  opacity: .70;
+  background: transparent;
+}

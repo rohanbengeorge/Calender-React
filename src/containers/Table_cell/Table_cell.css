@@ -1,0 +1,49 @@
+.change_color {
+    background-color: #F5EBFF;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    background-color: #4285f4;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+
+}
+.selected_cell{
+    cursor: pointer;
+}
+.table_cell{
+    white-space: nowrap; 
+      width: 100px;
+    height: 80px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    position: absolute;
+    width: 100%;
+    right: 0px; 
+    bottom: 0px;
+    padding-left: 3px;
+}
+.table_cell:hover { 
+    height: 80px;
+    overflow: visible;
+    color:black; 
+}
+.reminder_list{
+    list-style: none;
+    font-size: 13px;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+    margin: 1px 0 1px 0;
+    text-align: center;
+} 
+.reminder_list_ul{
+    padding: 1px;
+    margin-right: 0px;
+} 
+.table_col
+{
+    position: relative;
+    width:100px;
+}
