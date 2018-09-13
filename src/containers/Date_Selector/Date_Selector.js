@@ -13,15 +13,12 @@ class DateSelector extends Component {
         };
     }
     componentWillReceiveProps(nextProps){
-        console.log("dateselector componentwillreceiveprops")
         this.setState({
             selected_date:nextProps.date,
         })
     }
     handleChange=(event)=>{
         let changed_date=event.target.value;
-        console.log("selected date",changed_date);
-
         this.props.dispatchDate(changed_date);
         this.setState({
             selected_date:changed_date
@@ -30,7 +27,6 @@ class DateSelector extends Component {
     handleBackButton=()=>{
         var changed_date = moment(this.state.selected_date).subtract(1, 'months')._d;
         changed_date=moment(changed_date).format("YYYY-MM-DD");
-        console.log("back date",changed_date);
         this.setState({
             selected_date:changed_date
         })
@@ -39,7 +35,6 @@ class DateSelector extends Component {
     handleNextButton=()=>{
         var changed_date = moment(this.state.selected_date).add(1, 'months')._d;
         changed_date=moment(changed_date).format("YYYY-MM-DD");
-        console.log("forward date",changed_date);
         this.setState({
             selected_date:changed_date
         })

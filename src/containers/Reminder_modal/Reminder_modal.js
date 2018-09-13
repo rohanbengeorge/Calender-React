@@ -15,7 +15,6 @@ class ReminderModal extends Component {
         };
     }
     componentWillReceiveProps(nextProps){
-        console.log("dateselector componentwillreceiveprops")
         this.setState({
             display:'block',
             opacity:1,
@@ -58,7 +57,7 @@ class ReminderModal extends Component {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h4 className="modal-title" >Add Reminders to {this.state.selected_date} </h4>
+                            <h4 className="modal-title" >Add Reminders to {this.props.selected_date} </h4>
                             <button type="button" className="close" data-dismiss="modal" onClick={this.handleClose}>&times;</button>
                         </div>
                         <div className="modal-body">

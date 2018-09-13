@@ -13,8 +13,6 @@ class List extends Component {
     }
     handleDelete=(event)=>{
         let index = event.target.value;
-        console.log("list index",index)
-        debugger;
         this.props.dispatchDelete(this.props.date,index,this.props.state)
     }
     render() {

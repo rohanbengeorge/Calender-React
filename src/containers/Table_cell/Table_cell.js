@@ -38,10 +38,8 @@ class TableCell extends Component {
 const mapStateToProps = state => ({
     date:state.reducer.date,
 });
-const mapDispatchToProps = dispatch => ({
-});
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps)(TableCell);
+    null)(TableCell);
 

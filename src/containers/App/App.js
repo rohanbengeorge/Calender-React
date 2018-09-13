@@ -31,19 +31,15 @@ class App extends Component {
             this.handleNext();     
     }
     handleBack=(event)=>{
-        console.log("scroll evnt back");
         let cur_date=this.props.date;
         let changed_date = moment(cur_date).subtract(1, 'months')._d;
         changed_date=moment(changed_date).format("YYYY-MM-DD");
-        console.log("scroll back date",changed_date);
         this.props.dispatchDate(changed_date);
     } 
     handleNext=(event)=>{
-        console.log("scroll evnt next");
         let cur_date=this.props.date;
         let changed_date = moment(cur_date).add(1, 'months')._d;
         changed_date=moment(changed_date).format("YYYY-MM-DD");
-        console.log("scroll next date",changed_date)
         this.props.dispatchDate(changed_date);
     }  
     handleClick=(event)=>{
@@ -60,7 +56,6 @@ class App extends Component {
              else
                 dayno=selected.getDate();
             selected=moment(selected).format("YYYY-MM-DD");
-            console.log("app sel date",selected);    
             this.setState({
                 selected_date:selected,
                 isVisible:true
@@ -71,7 +66,7 @@ class App extends Component {
     toggleModal = () => this.setState({ isVisible: false })
 
     render() {
-        console.log('isVisibleStatus', this.state.isVisible);
+        
         return (
             <div id="div_container">
                 <DateSelector />
