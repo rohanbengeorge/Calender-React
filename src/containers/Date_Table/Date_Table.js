@@ -10,7 +10,7 @@ class DateTable  extends Component {
     render() {
         let firstDay = parseInt(moment(this.props.date).startOf('month').format('d'),10);
         let totalDays=parseInt(moment(this.props.date).daysInMonth(),10);
-        let totalrows= (firstDay+totalDays)/7;
+        let totalrows= (firstDay+totalDays-1)/7;
         let rows=[]
         for (let i=0;i<=totalrows;i++)
             rows.push(i)

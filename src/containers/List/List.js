@@ -21,15 +21,12 @@ class List extends Component {
         if (list[date] && list[date].length!==0) {
             let lists=list[date];            
             let list_html;
-            if (typeof(lists) === "string") {
-                list_html=<li>{lists}</li>
-            }
-            else {
-                const _this=this;
-                list_html = lists.map(function (row, index) {
-                    return (<li key={index} value={index} className={_this.props.from} onClick={_this.handleDelete}>{row}</li>)
-                });
-            }
+            const _this=this;
+            list_html = lists.map(function (row, index) {
+                return (<li key={index} value={index} className={_this.props.from + " selected_cell"} 
+                                onClick={_this.props.from? null : _this.handleDelete}>{row}</li>)
+            });
+
             return (
                 <ul className={this.props.from+"_ul"}>
                     {list_html}
@@ -46,8 +43,6 @@ class List extends Component {
 const mapStateToProps = state => ({
     state:state.reducer,
     list: state.reducer,
-
-
 });
 const mapDispatchToProps = dispatch => ({
     dispatchDelete: (date,index,state) => dispatch(Del_reminder(date,index,state)),

@@ -3,9 +3,6 @@
   display: none;
   overflow-y: visible;
 }
-modal-title{
-    text-align: left;
-}
 #confirmbox {
 
     background-color: rgba(0,0,0,0.5);

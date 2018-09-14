@@ -26,9 +26,9 @@ class App extends Component {
 
     handleScroll=(event)=>{
         if(event.deltaY<0)
-            this.handleBack();
+            !this.state.isVisible && this.handleBack();
         else
-            this.handleNext();     
+            !this.state.isVisible && this.handleNext();     
     }
     handleBack=(event)=>{
         let cur_date=this.props.date;
@@ -53,7 +53,7 @@ class App extends Component {
         {
             if(dayno[0]!==" ")
                 selected.setDate(dayno);
-             else
+            else
                 dayno=selected.getDate();
             selected=moment(selected).format("YYYY-MM-DD");
             this.setState({

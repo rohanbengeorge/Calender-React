@@ -19,7 +19,7 @@ class TableCell extends Component {
             selected_date.setDate(dayno);  
             dayno=<div className={"change_color"}> {dayno}</div>;
         }
-         else  
+        else  
             selected_date.setDate(dayno);    
 
         selected_date=moment(selected_date).format("YYYY-MM-DD");
