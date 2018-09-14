@@ -22,12 +22,13 @@ class TableCell extends Component {
         else  
             selected_date.setDate(dayno);    
 
+        let dayno_temp = dayno;
         selected_date=moment(selected_date).format("YYYY-MM-DD");
         let classLabel;    
         dayno===null ?  classLabel = "table_cell" : classLabel="table_cell selected_cell"
         
         return (        
-            <div className={classLabel} >
+            <div className={classLabel} value={dayno_temp} >
                 {dayno}                
                 < List date={selected_date} from={"reminder_list"} />                             
             </div>

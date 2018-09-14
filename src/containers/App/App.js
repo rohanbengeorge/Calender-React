@@ -43,11 +43,11 @@ class App extends Component {
         this.props.dispatchDate(changed_date);
     }  
     handleClick=(event)=>{
-        
+        debugger;
         var selected = new Date(Date.parse(this.props.date));
-        var eventText=event.target.textContent
+        var eventText=event.target.innerText;
         var dayno=eventText[0];
-        if(!isNaN(eventText[1]))
+        if(!isNaN(eventText[1]) && eventText[0]<4)
             dayno=dayno+eventText[1];
         if(!isNaN(dayno))
         {
