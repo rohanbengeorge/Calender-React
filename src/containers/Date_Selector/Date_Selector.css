@@ -2,6 +2,10 @@
 {
   width:180px;
   margin-top: 4px;
+
+}
+.data-selector_div{
+    margin-right: 30px;
 }
 .monthAndYear{
   font-size: 20px;
@@ -22,4 +26,12 @@
 .changeMonth_bttn{
   opacity: .70;
   background: transparent;
+}
+.qCalender{
+    margin-left: 10px;
+}
+.today_btn{
+    margin-top: 4px;
+    margin-left: 5px;
+    margin-right: 10px;
 }

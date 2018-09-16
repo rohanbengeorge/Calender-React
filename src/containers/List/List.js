@@ -1,20 +1,29 @@
 import {Component} from "react";
 import React from "react";
 import connect from "react-redux/es/connect/connect";
-import {Del_reminder} from '../../actions/index'
 
+import EditModal from '../EditModal/EditModal'
+import {openEditModal} from "../../actions";
 class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
             date: null,
         };
     }
-    handleDelete=(event)=>{
-        let index = event.target.value;
-        this.props.dispatchDelete(this.props.date,index,this.props.state)
-    }
+    handleOpenModale=(event)=>{
+
+        let index = event.target.value[0];
+        this.props.dispatchEditModal(index)
+        // this.setState({
+        //     isModalVisible: true,
+        //     index:event.target.value
+        // })
+        //this.props.handleCloseReminder && this.props.handleCloseReminder();
+        //this.props.dispatchDelete(this.props.date,index,this.props.state)
+    };
+
+
     render() {
         let date=this.props.date;
         let list=this.props.list
@@ -23,14 +32,19 @@ class List extends Component {
             let list_html;
             const _this=this;
             list_html = lists.map(function (row, index) {
-                return (<li key={index} value={index} className={_this.props.from + " selected_cell"} 
-                                onClick={_this.props.from? null : _this.handleDelete}>{row}</li>)
+                return (<li key={index} value={index+date[8]+date[9]}  data-toggle='tooltip' data-placement='bottom' title='Click to Edit or Delete' className={_this.props.from + " selected_cell"}
+                            onClick={ _this.handleOpenModale}>{row}</li>)
             });
 
             return (
+                <div>
                 <ul className={this.props.from+"_ul"}>
                     {list_html}
-                </ul>);
+                </ul>
+                    {this.state.isModalVisible && <EditModal index={this.state.index}
+                                                    date={this.props.date}
+                                                    toggleModal={this.toggleModal}/>}
+                </div>    );
         }
         else if(this.props.from)
             return null;
@@ -45,7 +59,7 @@ const mapStateToProps = state => ({
     list: state.reducer,
 });
 const mapDispatchToProps = dispatch => ({
-    dispatchDelete: (date,index,state) => dispatch(Del_reminder(date,index,state)),
+    dispatchEditModal: (index) => dispatch(openEditModal(index,true)),
 });
 
 export default connect(

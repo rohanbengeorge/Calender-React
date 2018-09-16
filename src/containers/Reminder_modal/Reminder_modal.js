@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import connect from "react-redux/es/connect/connect";
 import List from '../List/List'
 import {Add_reminder} from '../../actions'
-
+import './Reminder_modal.css'
 class ReminderModal extends Component {
     constructor(props) {
         super(props);
@@ -60,14 +60,15 @@ class ReminderModal extends Component {
                             <h4 className="modal-title" >Add Reminders to {this.props.selected_date} </h4>
                             <button type="button" className="close" data-dismiss="modal" onClick={this.handleClose}>&times;</button>
                         </div>
-                        <div className="modal-body">
-                            < List date={this.props.selected_date} />
+                        <div className="modal-body my_modal_body">
+                            < List date={this.props.selected_date}
+                                    handleCloseReminder={this.handleClose}/>
 
                         </div>
                         <div className="modal-footer">
-                            <input type="text" className="form-control" id="input_task" placeholder={"Add title"} onBlur={this.handleBlurReminder}/>
+                            <input type="text" className="form-control" id="input_task" required placeholder={"Add title"} onBlur={this.handleBlurReminder}/>
                             <input type="time" className="form-control" id="time_task" onBlur={this.handleBlurTime} />
-                            <button type="button" id="submit_confirm" data-dismiss="modal" className="btn btn-primary " onClick={this.handleSubmit}>Submit
+                            <button type="button" id="submit_confirm" data-dismiss="modal"  className="btn btn-primary " onClick={this.handleSubmit}>Submit
                             </button>
                         </div>
                     </div>

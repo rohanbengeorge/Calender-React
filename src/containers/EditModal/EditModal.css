@@ -1,0 +1,154 @@
+.my-edit-modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.my-edit-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 35%;
+    /* height: 250px; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close-edit:hover, .edit-button:hover {
+    cursor: pointer;
+}
+.close-edit:hover {
+    background-color: rgba(245, 209, 217, 0.33);
+}
+.my-edit-modal-body {
+    padding: 5px 16px;
+    height: 124px;
+    background-color: #3F51B5;
+    position: relative;
+    overflow:hidden;
+}
+.close-edit {
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    border-radius: 16px;
+    right: 20px;
+    color: #fff;
+}
+.my-edit-modal-footer {
+    background-color: #fff;
+    height: 50%;
+    color: #000;
+}
+.time-span {
+    margin-left: 10px;
+}
+.edit-button i {
+    color: #fff;
+}
+.edit-button {
+    background-color: #003d99;
+    display: inline-block;
+    padding: 9px 12px;
+    border-radius: 50px;
+    position: absolute;
+    top: 42%;
+    left: 5px;
+}
+.delete-task {
+    color: #fff;
+    margin-top: 3px;
+    margin-right: 4px;
+}
+.button-cont {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+.task-date {
+    color: #000;
+    margin-left: 10%;
+    font-size: 20px;
+}
+.task-name {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 10%;
+}
+.count-shower {
+    padding: 64px 0 0 32px;
+    color: #fff;
+}
+.count-shower span {
+    font-size: 20px;
+    font-weight: 400;
+
+}
+.reminder-list {
+    list-style-type: none;
+}
+.reminder-list {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    padding: 20px 0 20px 20px;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+.reminder-list li {
+    color: #212121;
+    margin: 10px 0 10px;
+}
+.reminder-list span {
+    margin-left: 30px;
+}
+.right_top {
+    color:#fff;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+.right_top span {
+    padding: 6px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.right_top span:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#editInputField{
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+}
+#editInputField:focus {
+    outline: 0px;
+    border: none;
+}

@@ -14,7 +14,13 @@ export const reducer = (state = intial_state, action) => {
 
         case 'DELETE_REMINDER': {
            return {...state, [action.date]: action.reminder_array};
-        }  
+        }
+        case 'EDIT_MODAL':{
+            return {...state, index: action.index,isEditModalOpen:action.isOpen};
+        }
+        case 'EDIT_REMINDER': {
+            return {...state, [action.date]: action.reminder_array};
+        }
           
         default:
             return state;
